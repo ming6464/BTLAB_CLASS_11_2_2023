@@ -1,34 +1,25 @@
-import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
-import { Button, FlatList, Text, View } from "react-native";
+import { View, Text, Button } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Manager from "./Manager";
+import Home from "./src/screens/Home";
+import Info from "./src/screens/Info";
+import UserList from "./src/screens/UserList";
+import Product from "./src/screens/Product";
 
-import styles from "./App.component.style";
-import FormItem from "./components/FormItem";
-import Item from "./components/Item";
-export default function App() {
-  const [arrItem, setArrItem] = useState([]);
-  const [isShowForm, setIsShowForm] = useState(false);
-  const AddItem = (item) => {
-    setArrItem([...arrItem, item]);
-  };
+const Stack = createNativeStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.container1}>
-        <Text style={styles.text}>Nguyễn Gia Minh</Text>
-        <Text style={styles.text}>PH25430</Text>
-        <Button title="Thêm Mới" onPress={() => setIsShowForm(true)} />
-      </View>
-      <View style={styles.container2}>
-        {isShowForm ? (
-          <FormItem AddItem={AddItem} setIsShowForm={setIsShowForm} />
-        ) : null}
-        <FlatList
-          data={arrItem}
-          renderItem={({ item }) => <Item item={item} />}
-          keyExtractor={(item, index) => index.toString()}
-        />
-      </View>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Manager" component={Manager} />
+        <Stack.Screen name="Info" component={Info} />
+        <Stack.Screen name="UserList" component={UserList} />
+        <Stack.Screen name="Products" component={Product} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
+export default App;

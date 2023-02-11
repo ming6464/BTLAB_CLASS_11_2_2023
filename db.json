@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "name": "Laptop",
+      "desc": "Acer aspire 5",
+      "price": 13500,
+      "sale_price": 11500,
+      "status": 1
+    },
+    {
+      "id": 1,
+      "name": "Smart Phone",
+      "desc": "Iphone 14",
+      "price": 32500,
+      "sale_price": 25500,
+      "status": 1
+    },
+    {
+      "id": 2,
+      "name": "Smart Phone",
+      "desc": "Lg V30",
+      "price": 2500,
+      "sale_price": 1000,
+      "status": 0
+    },
+    {
+      "id": 3,
+      "name": "Smart Phone",
+      "desc": "Gamming Phone Rog 3",
+      "price": 32500,
+      "sale_price": 30000,
+      "status": 1
+    }
+  ]
+}
